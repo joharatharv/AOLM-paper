@@ -1,0 +1,76 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Axolotl config: Qwen2.5-Math-7B-Instruct + QLoRA  (PRIMARY MODEL)
+# GPU: RTX 2080 (8GB VRAM, Turing/cc7.5)
+#   - QLoRA (4-bit NF4) required to fit 7B in 8GB
+#   - FP16 only (2080 has no BF16 hardware support)
+#   - No flash-attn (requires Ampere cc8.0+)
+#   - Gradient checkpointing enabled to reduce activation memory
+#   - micro_batch_size=1 + grad_accum=16 to stay within 8GB
+# ─────────────────────────────────────────────────────────────────────────────
+
+base_model: Qwen/Qwen2.5-Math-7B-Instruct
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+datasets:
+  - path: final_dataset/train.jsonl
+    type: alpaca
+    field_instruction: instruction
+    field_input: input
+    field_output: output
+
+dataset_prepared_path: training/.prepared_qwen25_math_7b
+val_set_size: 0
+
+# ── Tokenization ──────────────────────────────────────────────────────────────
+sequence_len: 1536        # reduced from 2048; p95 of dataset is ~1088, so no data loss
+sample_packing: false
+train_on_inputs: false      # CRITICAL: loss on output tokens only
+
+# ── QLoRA (4-bit) ─────────────────────────────────────────────────────────────
+adapter: qlora
+load_in_4bit: true
+bnb_4bit_compute_dtype: float16   # must be float16 on 2080 Ti (no bf16)
+bnb_4bit_quant_type: nf4
+bnb_4bit_use_double_quant: true   # saves ~0.4 bits/param extra
+
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_linear: true          # all linear layers
+lora_fan_in_fan_out: false
+
+# ── Training ──────────────────────────────────────────────────────────────────
+output_dir: training/outputs/qwen25_math_7b_qlora_r32
+
+num_epochs: 3
+micro_batch_size: 1               # 8GB requires batch=1 for 7B QLoRA
+gradient_accumulation_steps: 16  # effective batch = 1×16 = 16 (same as before)
+optimizer: paged_adamw_8bit       # 8-bit AdamW saves ~3GB vs standard AdamW
+lr_scheduler: cosine
+learning_rate: 2e-4
+weight_decay: 0.0
+max_grad_norm: 1.0
+warmup_ratio: 0.03
+
+gradient_checkpointing: true      # trades compute for memory; ~30% slower but fits
+
+# ── Precision ─────────────────────────────────────────────────────────────────
+bf16: false
+fp16: true                        # 2080 Ti supports FP16 tensor cores
+tf32: false
+
+# ── Logging & checkpointing ───────────────────────────────────────────────────
+logging_steps: 10
+save_steps: 100
+save_total_limit: 3
+
+wandb_project: aolm-ft
+wandb_run_id: qwen25-math-7b-qlora-r32-lr2e4
+wandb_watch: "false"
+
+temperature: 0.0
+max_new_tokens: 512
+
+seed: 42

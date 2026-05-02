@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Axolotl config: Llama-3.1-8B-Instruct + QLoRA  (SECONDARY MODEL)
+# GPU: RTX 2080 (8GB VRAM, Turing/cc7.5)
+# 8B is the tightest fit — sequence_len reduced to 1024, batch=1
+# ─────────────────────────────────────────────────────────────────────────────
+
+base_model: meta-llama/Meta-Llama-3.1-8B-Instruct
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+
+datasets:
+  - path: final_dataset/train.jsonl
+    type: alpaca
+    field_instruction: instruction
+    field_input: input
+    field_output: output
+
+dataset_prepared_path: training/.prepared_llama31_8b
+val_set_size: 0
+
+sequence_len: 1024        # 8B on 8GB requires the most aggressive reduction
+sample_packing: false
+train_on_inputs: false
+
+adapter: qlora
+load_in_4bit: true
+bnb_4bit_compute_dtype: float16
+bnb_4bit_quant_type: nf4
+bnb_4bit_use_double_quant: true
+
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_linear: true
+lora_fan_in_fan_out: false
+
+output_dir: training/outputs/llama31_8b_qlora_r32
+
+num_epochs: 3
+micro_batch_size: 1               # 8GB requires batch=1 for 8B QLoRA
+gradient_accumulation_steps: 16  # effective batch = 16
+optimizer: paged_adamw_8bit
+lr_scheduler: cosine
+learning_rate: 2e-4
+weight_decay: 0.0
+max_grad_norm: 1.0
+warmup_ratio: 0.03
+
+gradient_checkpointing: true
+
+bf16: false
+fp16: true
+tf32: false
+
+logging_steps: 10
+save_steps: 100
+save_total_limit: 3
+
+wandb_project: aolm-ft
+wandb_run_id: llama31-8b-qlora-r32-lr2e4
+wandb_watch: "false"
+
+seed: 42

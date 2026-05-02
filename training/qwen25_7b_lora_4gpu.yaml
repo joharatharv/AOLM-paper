@@ -1,0 +1,92 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Axolotl config: Qwen2.5-7B-Instruct + LoRA  (NO quantization)
+# GPU: 4× RTX 2080 (32GB total) — DeepSpeed ZeRO-3 shards 14GB model across GPUs
+#
+# WHY Qwen2.5-7B-Instruct (not Math):
+#   The Math variant is over-specialized for \boxed{} problem solving and breaks
+#   under FP16 inference on Turing. The general Instruct base is robust,
+#   has strong math knowledge from pretraining, and is the correct base for
+#   a conversational tutoring task.
+#
+# WHY no quantization:
+#   Full FP16 LoRA has no quantization noise in activations → cleaner gradients
+#   → better adapter quality. With 4 GPUs and ZeRO-3 this is feasible.
+#
+# Launch with:
+#   deepspeed --num_gpus 4 --module axolotl.cli.train training/qwen25_7b_lora_4gpu.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+
+base_model: Qwen/Qwen2.5-7B-Instruct
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+datasets:
+  - path: final_ft_dataset/train.jsonl
+    type: alpaca
+    field_instruction: instruction
+    field_input: input
+    field_output: output
+
+test_datasets:
+  - path: final_ft_dataset/val.jsonl
+    type: alpaca
+    field_instruction: instruction
+    field_input: input
+    field_output: output
+    max_samples: 20        # eval on 20 examples — fast, still meaningful signal
+
+dataset_prepared_path: training/.prepared_qwen25_7b
+val_set_size: 0          # don't carve eval from train.jsonl; use test_datasets above
+
+sequence_len: 1024        # reduced from 2048 to fit 11GB GPUs; covers ≥95% of dataset
+sample_packing: false
+train_on_inputs: false      # CRITICAL: loss on output tokens only
+
+# ── LoRA (no quantization) ────────────────────────────────────────────────────
+adapter: lora               # plain LoRA, not qlora
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_linear: true    # all linear layers
+lora_fan_in_fan_out: false
+
+# Disable Axolotl fused LoRA kernels — designed for Ampere+, cause OOM on Turing (RTX 2080)
+lora_qkv_kernel: false
+lora_mlp_kernel: false
+lora_o_kernel: false
+
+# ── Training ──────────────────────────────────────────────────────────────────
+output_dir: training/outputs/qwen25_7b_lora_r32_4gpu
+
+num_epochs: 3
+micro_batch_size: 1         # per GPU; effective batch = 1 × 4 GPUs × 8 accum = 32
+gradient_accumulation_steps: 8
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+learning_rate: 2e-4
+weight_decay: 0.0
+max_grad_norm: 1.0
+warmup_ratio: 0.03
+
+gradient_checkpointing: true
+
+# ── Precision ─────────────────────────────────────────────────────────────────
+bf16: false
+fp16: true                  # Turing has FP16 tensor cores; no BF16 hardware
+tf32: false
+
+# ── DeepSpeed ZeRO-3 ─────────────────────────────────────────────────────────
+deepspeed: training/deepspeed_zero3.json
+
+# ── Logging & checkpointing ───────────────────────────────────────────────────
+logging_steps: 10
+eval_steps: 100           # evaluate every 100 steps on the 20-sample val set
+save_steps: 100
+save_total_limit: 3
+
+wandb_project: aolm-ft
+wandb_run_id: qwen25-7b-lora-r32-4gpu-noquant
+wandb_watch: "false"
+
+seed: 42

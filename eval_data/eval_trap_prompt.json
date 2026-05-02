@@ -1,0 +1,452 @@
+[
+  {
+    "id": "trap_1_idk_phase1",
+    "base_problem_id": "trap_1",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?",
+    "student_working": "TUESDAY has 7 letters. Vowels: U, E, A (3 vowels). Consonants: T, S, D, Y (4 consonants). Even positions in a 7-letter word: 2nd, 4th, 6th = 3 positions. But I don't know how to count the arrangements under this constraint.",
+    "input": "PROBLEM: How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?\n\nSTUDENT'S CURRENT WORKING:\nTUESDAY has 7 letters. Vowels: U, E, A (3 vowels). Consonants: T, S, D, Y (4 consonants). Even positions in a 7-letter word: 2nd, 4th, 6th = 3 positions. But I don't know how to count the arrangements under this constraint."
+  },
+  {
+    "id": "trap_1_idk_phase2",
+    "base_problem_id": "trap_1",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?",
+    "student_working": "I know I should place vowels in even positions and consonants in odd positions separately, but I'm still not sure whether to use permutations or combinations for this.",
+    "input": "PROBLEM: How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?\n\n[CONVERSATION HISTORY]\nSTUDENT: I identified 3 vowels (U, E, A) and 4 consonants (T, S, D, Y). There are 3 even positions. I don't know how to count the arrangements.\nTUTOR: Think of it as two independent tasks: place the vowels in the even positions first, then fill the consonants into the odd positions. Since both groups contain distinct letters, you need to arrange (not just choose) them.\n\nSTUDENT'S CURRENT WORKING:\nI know I should place vowels in even positions and consonants in odd positions separately, but I'm still not sure whether to use permutations or combinations for this."
+  },
+  {
+    "id": "trap_1_wrong_pick_phase3",
+    "base_problem_id": "trap_1",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?",
+    "student_working": "I pick (c) because we're dividing the total arrangements by the groups, like in the formula for identical objects.",
+    "input": "PROBLEM: How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?\n\n[CONVERSATION HISTORY]\nSTUDENT: I identified 3 vowels and 4 consonants, 3 even positions. Don't know how to count.\nTUTOR: Place vowels in even positions first, then consonants in odd positions. Both groups are distinct, so arrange them.\nSTUDENT: Still not sure whether to use permutations or combinations.\nTUTOR: Which of these gives the correct count?\n(a) 3! × 4! = 144 — arrange 3 vowels in 3 even spots, then 4 consonants in 4 odd spots\n(b) C(3,3) × C(4,4) = 1 — choose which letters go where (no arrangement)\n(c) 7! / (3! × 4!) = 35 — total arrangements divided by group sizes\n(d) 3³ × 4⁴ = 6912 — each letter independently picks a position\n\nSTUDENT'S CURRENT WORKING:\nI pick (c) because we're dividing the total arrangements by the groups, like in the formula for identical objects."
+  },
+  {
+    "id": "trap_1_wrong_pick_phase4",
+    "base_problem_id": "trap_1",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?",
+    "student_working": "I tried (c) 7!/(3!×4!)=35 and now (d) 3³×4⁴=6912. I can't figure out which counting principle to use.",
+    "input": "PROBLEM: How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?\n\n[CONVERSATION HISTORY]\nSTUDENT: I identified 3 vowels and 4 consonants, 3 even positions. Don't know how to count.\nTUTOR: Place vowels in even positions first, then consonants in odd positions. Arrange distinct letters.\nSTUDENT: Still not sure whether to use permutations or combinations.\nTUTOR: Pick: (a) 3!×4!=144 (b) C(3,3)×C(4,4)=1 (c) 7!/(3!×4!)=35 (d) 3³×4⁴=6912\nSTUDENT: (c) because we divide total by groups.\nTUTOR: 7!/(3!×4!) counts combinations — how many ways to choose 3 positions from 7 for vowels — but it doesn't arrange the distinct vowels within those positions or the distinct consonants. All letters here are different. Try again.\nSTUDENT: (d) 3³×4⁴=6912?\n\nSTUDENT'S CURRENT WORKING:\nI tried (c) 7!/(3!×4!)=35 and now (d) 3³×4⁴=6912. I can't figure out which counting principle to use."
+  },
+  {
+    "id": "trap_2_idk_phase1",
+    "base_problem_id": "trap_2",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.",
+    "student_working": "I wrote (x−h)² + (y−k)² = r². Substituted (4,1): (4−h)²+(1−k)²=r². Substituted (6,5): (6−h)²+(5−k)²=r². Also 4h+k=16. I have 3 equations and 3 unknowns h, k, r but I don't know how to solve this system.",
+    "input": "PROBLEM: Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.\n\nSTUDENT'S CURRENT WORKING:\nI wrote (x−h)² + (y−k)² = r². Substituted (4,1): (4−h)²+(1−k)²=r². Substituted (6,5): (6−h)²+(5−k)²=r². Also 4h+k=16. I have 3 equations and 3 unknowns h, k, r but I don't know how to solve this system."
+  },
+  {
+    "id": "trap_2_idk_phase2",
+    "base_problem_id": "trap_2",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.",
+    "student_working": "I subtracted the two point equations and got something with h and k, but now I have two equations in h and k and I don't remember how to solve simultaneous linear equations efficiently.",
+    "input": "PROBLEM: Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.\n\n[CONVERSATION HISTORY]\nSTUDENT: I have three equations with h, k, r but don't know how to solve the system.\nTUTOR: Since both point equations equal r², subtract one from the other to eliminate r² entirely. This gives you a linear equation in h and k. Combine it with 4h+k=16 to solve.\n\nSTUDENT'S CURRENT WORKING:\nI subtracted the two point equations and got something with h and k, but now I have two equations in h and k and I don't remember how to solve simultaneous linear equations efficiently."
+  },
+  {
+    "id": "trap_2_wrong_pick_phase3",
+    "base_problem_id": "trap_2",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.",
+    "student_working": "I pick (c) because the centre should be equidistant from both points so it's on the midpoint, meaning h = k.",
+    "input": "PROBLEM: Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.\n\n[CONVERSATION HISTORY]\nSTUDENT: I have three equations with h, k, r. Don't know how to solve.\nTUTOR: Subtract the two point equations to eliminate r², giving a linear equation in h and k. Combine with 4h+k=16.\nSTUDENT: I have two linear equations but don't know how to solve them.\nTUTOR: After subtraction you get h+2k=11. Combined with 4h+k=16, which method solves this?\n(a) Substitution: from h+2k=11, get h=11−2k, plug into 4h+k=16 to find k, then h\n(b) Add both equations: 5h+3k=27, then guess integer values\n(c) Assume h=k since the centre is equidistant from both points\n(d) Multiply first equation by 4 and subtract: eliminates h, giving 7k=28\n\nSTUDENT'S CURRENT WORKING:\nI pick (c) because the centre should be equidistant from both points so it's on the midpoint, meaning h = k."
+  },
+  {
+    "id": "trap_2_wrong_pick_phase4",
+    "base_problem_id": "trap_2",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.",
+    "student_working": "I tried (c) h=k assumption and (b) adding equations then guessing. I still can't solve this system.",
+    "input": "PROBLEM: Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.\n\n[CONVERSATION HISTORY]\nSTUDENT: Three equations with h, k, r. Don't know how to solve.\nTUTOR: Subtract point equations to eliminate r². Combine with 4h+k=16.\nSTUDENT: Two linear equations but can't solve them.\nTUTOR: Pick: (a) substitution h=11−2k into 4h+k=16 (b) add equations, guess (c) assume h=k (d) multiply and subtract\nSTUDENT: (c) h=k because centre equidistant.\nTUTOR: Equidistant from both points means the centre lies on the perpendicular bisector — not that h=k. The perpendicular bisector gives the equation h+2k=11, which you already have. h=k is an extra assumption with no basis. Try again.\nSTUDENT: (b) add both equations and guess.\n\nSTUDENT'S CURRENT WORKING:\nI tried (c) h=k assumption and (b) adding equations then guessing. I still can't solve this system."
+  },
+  {
+    "id": "trap_3_idk_phase1",
+    "base_problem_id": "trap_3",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.",
+    "student_working": "I divided by 400 to get x²/16 − y²/25 = 1. So a² = 16 and b² = 25. But I don't know the formula for the latus rectum of a hyperbola.",
+    "input": "PROBLEM: Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.\n\nSTUDENT'S CURRENT WORKING:\nI divided by 400 to get x²/16 − y²/25 = 1. So a² = 16 and b² = 25. But I don't know the formula for the latus rectum of a hyperbola."
+  },
+  {
+    "id": "trap_3_idk_phase2",
+    "base_problem_id": "trap_3",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.",
+    "student_working": "The formula is 2b²/a. But I'm confused — is a² the denominator under x² or is it always the larger one? In hyperbolas the relationship might be different from ellipses.",
+    "input": "PROBLEM: Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.\n\n[CONVERSATION HISTORY]\nSTUDENT: I got x²/16 − y²/25 = 1. a² = 16, b² = 25. Don't know the latus rectum formula.\nTUTOR: The latus rectum formula for a hyperbola is the same as for an ellipse: LR = 2b²/a. For x²/a² − y²/b² = 1, a² is always under x² and b² is under y².\n\nSTUDENT'S CURRENT WORKING:\nThe formula is 2b²/a. But I'm confused — is a² the denominator under x² or is it always the larger one? In hyperbolas the relationship might be different from ellipses."
+  },
+  {
+    "id": "trap_3_wrong_pick_phase3",
+    "base_problem_id": "trap_3",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.",
+    "student_working": "I pick (b) because a² should be the larger denominator, which is 25.",
+    "input": "PROBLEM: Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.\n\n[CONVERSATION HISTORY]\nSTUDENT: x²/16 − y²/25 = 1. Don't know latus rectum formula.\nTUTOR: LR = 2b²/a. For x²/a² − y²/b² = 1, a² is under x², b² is under y².\nSTUDENT: Still confused — is a² under x² or is it always the larger denominator?\nTUTOR: Which identification and computation is correct?\n(a) a² = 16, b² = 25, LR = 2(25)/4 = 25/2\n(b) a² = 25, b² = 16, LR = 2(16)/5 = 32/5\n(c) a² = 16, b² = 25, LR = 2(16)/5 = 32/5\n(d) a² = 25, b² = 16, LR = 2(25)/4 = 25/2\n\nSTUDENT'S CURRENT WORKING:\nI pick (b) because a² should be the larger denominator, which is 25."
+  },
+  {
+    "id": "trap_3_wrong_pick_phase4",
+    "base_problem_id": "trap_3",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.",
+    "student_working": "I tried (b) a²=25 and (c) using 2a²/b instead of 2b²/a. I keep mixing up which denominator is a² and which formula to use.",
+    "input": "PROBLEM: Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.\n\n[CONVERSATION HISTORY]\nSTUDENT: x²/16 − y²/25 = 1. Don't know latus rectum formula.\nTUTOR: LR = 2b²/a. a² is under x², b² is under y².\nSTUDENT: Confused about which is a².\nTUTOR: Pick: (a) a²=16, b²=25, LR=25/2 (b) a²=25, b²=16, LR=32/5 (c) a²=16, b²=25, LR=32/5 (d) a²=25, b²=16, LR=25/2\nSTUDENT: (b) a²=25 because it's the larger one.\nTUTOR: In a hyperbola, unlike an ellipse, a² is ALWAYS under the positive variable — here x². So a²=16 regardless of size. b can be larger than a in a hyperbola. Try again.\nSTUDENT: (c) a²=16, b²=25, LR=2(16)/5=32/5?\n\nSTUDENT'S CURRENT WORKING:\nI tried (b) a²=25 and (c) using 2a²/b instead of 2b²/a. I keep mixing up which denominator is a² and which formula to use."
+  },
+  {
+    "id": "trap_4_idk_phase1",
+    "base_problem_id": "trap_4",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.",
+    "student_working": "Since angle is 45°, slope m = tan 45° = 1. The parabola is y² = 12x so 4a = 12 meaning a = 3. But I don't know the formula for the tangent to a parabola in slope form.",
+    "input": "PROBLEM: Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.\n\nSTUDENT'S CURRENT WORKING:\nSince angle is 45°, slope m = tan 45° = 1. The parabola is y² = 12x so 4a = 12 meaning a = 3. But I don't know the formula for the tangent to a parabola in slope form."
+  },
+  {
+    "id": "trap_4_idk_phase2",
+    "base_problem_id": "trap_4",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.",
+    "student_working": "The formula is y = mx + a/m. With m = 1 and a = 3, I get y = 1·x + 3/1. But I'm second-guessing myself — is it a/m or am? I keep confusing the two.",
+    "input": "PROBLEM: Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.\n\n[CONVERSATION HISTORY]\nSTUDENT: Slope m = 1, a = 3 from 4a = 12. But I don't know the tangent formula in slope form.\nTUTOR: For the parabola y² = 4ax, the tangent with slope m is y = mx + a/m. This can be derived by substituting y = mx + c into y² = 4ax and setting the discriminant to zero.\n\nSTUDENT'S CURRENT WORKING:\nThe formula is y = mx + a/m. With m = 1 and a = 3, I get y = 1·x + 3/1. But I'm second-guessing myself — is it a/m or am? I keep confusing the two."
+  },
+  {
+    "id": "trap_4_wrong_pick_phase3",
+    "base_problem_id": "trap_4",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.",
+    "student_working": "I pick (b) because the coefficient of x in the parabola is 12, so the constant in the tangent should be 12.",
+    "input": "PROBLEM: Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.\n\n[CONVERSATION HISTORY]\nSTUDENT: m = 1, a = 3. Don't know tangent slope form.\nTUTOR: For y² = 4ax, tangent is y = mx + a/m.\nSTUDENT: Is it a/m or am? I'm confused.\nTUTOR: With m = 1, a = 3, which tangent equation is correct?\n(a) y = x + 3 — using a/m = 3/1 = 3\n(b) y = x + 12 — using 4a = 12 as the constant\n(c) y = x + 1/3 — using m/a = 1/3\n(d) y = x − 3 — using −a/m\n\nSTUDENT'S CURRENT WORKING:\nI pick (b) because the coefficient of x in the parabola is 12, so the constant in the tangent should be 12."
+  },
+  {
+    "id": "trap_4_wrong_pick_phase4",
+    "base_problem_id": "trap_4",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.",
+    "student_working": "I tried (b) y=x+12 and (d) y=x−3. I genuinely don't know which constant goes with the tangent formula.",
+    "input": "PROBLEM: Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.\n\n[CONVERSATION HISTORY]\nSTUDENT: m = 1, a = 3. Don't know tangent slope form.\nTUTOR: For y² = 4ax, tangent is y = mx + a/m.\nSTUDENT: Is it a/m or am?\nTUTOR: Pick: (a) y=x+3 (b) y=x+12 (c) y=x+1/3 (d) y=x−3\nSTUDENT: (b) y=x+12 because 12 is the coefficient.\nTUTOR: The coefficient 12 equals 4a, not a. You need a = 3 (from 4a = 12), not 4a itself. The tangent uses a, not 4a. Try again.\nSTUDENT: (d) y=x−3?\n\nSTUDENT'S CURRENT WORKING:\nI tried (b) y=x+12 and (d) y=x−3. I genuinely don't know which constant goes with the tangent formula."
+  },
+  {
+    "id": "trap_5_idk_phase1",
+    "base_problem_id": "trap_5",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.",
+    "student_working": "I divided by 36 to get x²/9 + y²/4 = 1. So a² = 9 and b² = 4, giving a = 3, b = 2. But I don't know how to get the eccentricity from a and b.",
+    "input": "PROBLEM: Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.\n\nSTUDENT'S CURRENT WORKING:\nI divided by 36 to get x²/9 + y²/4 = 1. So a² = 9 and b² = 4, giving a = 3, b = 2. But I don't know how to get the eccentricity from a and b."
+  },
+  {
+    "id": "trap_5_idk_phase2",
+    "base_problem_id": "trap_5",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.",
+    "student_working": "c² = a² − b² = 9 − 4 = 5, so c = √5. But is the eccentricity c/a or a/c? I always mix these up.",
+    "input": "PROBLEM: Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.\n\n[CONVERSATION HISTORY]\nSTUDENT: x²/9 + y²/4 = 1. a² = 9, b² = 4. Don't know the eccentricity formula.\nTUTOR: For an ellipse, the relationship is c² = a² − b² where c is the distance from centre to focus. Then e = c/a. The eccentricity of an ellipse is always between 0 and 1.\n\nSTUDENT'S CURRENT WORKING:\nc² = a² − b² = 9 − 4 = 5, so c = √5. But is the eccentricity c/a or a/c? I always mix these up."
+  },
+  {
+    "id": "trap_5_wrong_pick_phase3",
+    "base_problem_id": "trap_5",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.",
+    "student_working": "I pick (b) because a/c gives a larger number and eccentricity should reflect how stretched the ellipse is.",
+    "input": "PROBLEM: Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.\n\n[CONVERSATION HISTORY]\nSTUDENT: x²/9 + y²/4 = 1. a=3, b=2. Don't know eccentricity formula.\nTUTOR: c² = a² − b², then e = c/a. Eccentricity of an ellipse is between 0 and 1.\nSTUDENT: c² = 5, c = √5. Is eccentricity c/a or a/c?\nTUTOR: Which of these is the correct eccentricity?\n(a) e = c/a = √5/3 ≈ 0.745, foci at (±√5, 0)\n(b) e = a/c = 3/√5 ≈ 1.342, foci at (±√5, 0)\n(c) e = c/b = √5/2 ≈ 1.118, foci at (0, ±√5)\n(d) e = b/a = 2/3 ≈ 0.667, foci at (±2, 0)\n\nSTUDENT'S CURRENT WORKING:\nI pick (b) because a/c gives a larger number and eccentricity should reflect how stretched the ellipse is."
+  },
+  {
+    "id": "trap_5_wrong_pick_phase4",
+    "base_problem_id": "trap_5",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.",
+    "student_working": "I tried (b) e=a/c=3/√5 and (d) e=b/a=2/3. I can't tell which ratio gives the eccentricity.",
+    "input": "PROBLEM: Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.\n\n[CONVERSATION HISTORY]\nSTUDENT: a=3, b=2, c=√5. Is eccentricity c/a or a/c?\nTUTOR: Pick: (a) e=√5/3, foci (±√5,0) (b) e=3/√5, foci (±√5,0) (c) e=√5/2, foci (0,±√5) (d) e=2/3, foci (±2,0)\nSTUDENT: (b) because a/c is larger.\nTUTOR: For an ellipse, e must be between 0 and 1. e=3/√5≈1.342>1, which is impossible — that would be a hyperbola. The correct formula puts the smaller value (c) in the numerator: e=c/a. Try again.\nSTUDENT: (d) e=b/a=2/3?\n\nSTUDENT'S CURRENT WORKING:\nI tried (b) e=a/c=3/√5 and (d) e=b/a=2/3. I can't tell which ratio gives the eccentricity."
+  },
+  {
+    "id": "trap_6_idk_phase1",
+    "base_problem_id": "trap_6",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.",
+    "student_working": "The given line is x + 3y = 7, slope = −1/3. Perpendicular from (3,8) has slope 3. I wrote the perpendicular line: y − 8 = 3(x − 3), which simplifies to y = 3x − 1. I need to find the foot of the perpendicular and then the reflection, but I don't know the procedure from here.",
+    "input": "PROBLEM: Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.\n\nSTUDENT'S CURRENT WORKING:\nThe given line is x + 3y = 7, slope = −1/3. Perpendicular from (3,8) has slope 3. I wrote the perpendicular line: y − 8 = 3(x − 3), which simplifies to y = 3x − 1. I need to find the foot of the perpendicular and then the reflection, but I don't know the procedure from here."
+  },
+  {
+    "id": "trap_6_idk_phase2",
+    "base_problem_id": "trap_6",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.",
+    "student_working": "I found the foot Q = (1, 2) by solving y = 3x − 1 and x + 3y = 7 simultaneously. But now I have Q and P = (3, 8) and I need the image P'. I know Q is the midpoint of P and P' but I don't remember how to use the midpoint formula backwards.",
+    "input": "PROBLEM: Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.\n\n[CONVERSATION HISTORY]\nSTUDENT: I have the perpendicular line y = 3x − 1 but don't know the next steps.\nTUTOR: Two steps: first intersect the perpendicular with the given line to find foot Q. Then use the midpoint formula — Q is the midpoint of P and its image P', so P' = 2Q − P.\n\nSTUDENT'S CURRENT WORKING:\nI found the foot Q = (1, 2) by solving y = 3x − 1 and x + 3y = 7 simultaneously. But now I have Q and P = (3, 8) and I need the image P'. I know Q is the midpoint of P and P' but I don't remember how to use the midpoint formula backwards."
+  },
+  {
+    "id": "trap_6_wrong_pick_phase3",
+    "base_problem_id": "trap_6",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.",
+    "student_working": "I pick (d) because I use P' = 2P − Q to reflect across the foot.",
+    "input": "PROBLEM: Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.\n\n[CONVERSATION HISTORY]\nSTUDENT: Perpendicular line y = 3x−1. Don't know next steps.\nTUTOR: Intersect to find foot Q, then P' = 2Q − P.\nSTUDENT: Found Q = (1,2). Don't remember how to reverse the midpoint formula.\nTUTOR: Given foot Q = (1,2) and original point P = (3,8), which gives the image P'?\n(a) P' = (2×1−3, 2×2−8) = (−1, −4)\n(b) P' = (3−1, 8−2) = (2, 6)\n(c) P' = (1+3, 2+8) = (4, 10)\n(d) P' = (2×3−1, 2×8−2) = (5, 14)\n\nSTUDENT'S CURRENT WORKING:\nI pick (d) because I use P' = 2P − Q to reflect across the foot."
+  },
+  {
+    "id": "trap_6_wrong_pick_phase4",
+    "base_problem_id": "trap_6",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.",
+    "student_working": "I tried (d) P'=2P−Q=(5,14) and (b) P'=(2,6). I don't understand the direction of the midpoint formula.",
+    "input": "PROBLEM: Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.\n\n[CONVERSATION HISTORY]\nSTUDENT: Found perpendicular, found foot Q=(1,2). Don't know midpoint reversal.\nTUTOR: Pick: (a) P'=(−1,−4) (b) P'=(2,6) (c) P'=(4,10) (d) P'=(5,14)\nSTUDENT: (d) P'=2P−Q=(5,14).\nTUTOR: You used P'=2P−Q, but the midpoint formula says Q=(P+P')/2, so P'=2Q−P, not 2P−Q. The foot Q is the midpoint, so you double Q and subtract P. Try again.\nSTUDENT: (b) P'=(3−1, 8−2)=(2,6)?\n\nSTUDENT'S CURRENT WORKING:\nI tried (d) P'=2P−Q=(5,14) and (b) P'=(2,6). I don't understand the direction of the midpoint formula."
+  },
+  {
+    "id": "trap_7_idk_phase1",
+    "base_problem_id": "trap_7",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...",
+    "student_working": "I see the numerators 1, 2, 3, 4 form an AP (d = 1) and the denominators 1, 3, 9, 27 form a GP (r = 1/3). So Tₙ = n/3^(n−1). But I don't know how to sum an arithmetic-geometric series.",
+    "input": "PROBLEM: Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...\n\nSTUDENT'S CURRENT WORKING:\nI see the numerators 1, 2, 3, 4 form an AP (d = 1) and the denominators 1, 3, 9, 27 form a GP (r = 1/3). So Tₙ = n/3^(n−1). But I don't know how to sum an arithmetic-geometric series."
+  },
+  {
+    "id": "trap_7_idk_phase2",
+    "base_problem_id": "trap_7",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...",
+    "student_working": "I wrote S and S/3 aligned next to each other. When I subtract I'm supposed to get cancellation but I can't work out what survives after the subtraction.",
+    "input": "PROBLEM: Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...\n\n[CONVERSATION HISTORY]\nSTUDENT: Numerators AP, denominators GP. Tₙ = n/3^(n−1). Don't know how to sum an AGP.\nTUTOR: Multiply S by the common ratio r = 1/3 to get rS, then subtract rS from S. The arithmetic part collapses and you're left with a pure geometric series that you can sum using the standard GP formula.\n\nSTUDENT'S CURRENT WORKING:\nI wrote S and S/3 aligned next to each other. When I subtract I'm supposed to get cancellation but I can't work out what survives after the subtraction."
+  },
+  {
+    "id": "trap_7_wrong_pick_phase3",
+    "base_problem_id": "trap_7",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...",
+    "student_working": "I pick (c) because when you subtract term by term, everything should cancel out and leave zero.",
+    "input": "PROBLEM: Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...\n\n[CONVERSATION HISTORY]\nSTUDENT: AGP with Tₙ = n/3^(n−1). Don't know how to sum.\nTUTOR: Multiply S by r=1/3, subtract rS from S. The AP part collapses into a GP.\nSTUDENT: I wrote S−S/3 but can't work out what survives.\nTUTOR: After computing (2/3)S = S − S/3, what remains?\n(a) 1 + 1/3 + 1/9 + 1/27 + ... = 3/2, so S = 9/4\n(b) 1 + 1/3 + 1/9 + ... = 3/2, so S = 3/2 × 3 = 9/2\n(c) All terms cancel, so (2/3)S = 0 and S = 0\n(d) The result is 2/3 + 3/9 + 4/27 + ... which is just S − 1\n\nSTUDENT'S CURRENT WORKING:\nI pick (c) because when you subtract term by term, everything should cancel out and leave zero."
+  },
+  {
+    "id": "trap_7_wrong_pick_phase4",
+    "base_problem_id": "trap_7",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...",
+    "student_working": "I tried (c) all cancel=0 and (d) just S−1. The shift-subtract method completely confuses me.",
+    "input": "PROBLEM: Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...\n\n[CONVERSATION HISTORY]\nSTUDENT: AGP. Don't know how to sum.\nTUTOR: S − S/3 collapses AP part into GP.\nSTUDENT: Can't figure out what survives.\nTUTOR: Pick: (a) GP 1+1/3+1/9+...=3/2, S=9/4 (b) S=9/2 (c) all cancel, S=0 (d) result is S−1\nSTUDENT: (c) everything cancels.\nTUTOR: S has all positive terms, so S > 0 — it can't be zero. The subtraction doesn't cancel everything: the first term 1 has no partner from S/3, and the coefficients differ (2/3−1/3=1/3, 3/9−2/9=1/9, etc.), leaving a GP. Try again.\nSTUDENT: (d) S−S/3 = S−1, so (2/3)S−S = −1?\n\nSTUDENT'S CURRENT WORKING:\nI tried (c) all cancel=0 and (d) just S−1. The shift-subtract method completely confuses me."
+  },
+  {
+    "id": "trap_8_idk_phase1",
+    "base_problem_id": "trap_8",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.",
+    "student_working": "For equal roots, the discriminant must be zero: b² − 4ac = 0. Here a = (k−2), b = 8, c = (k+4). So 64 − 4(k−2)(k+4) = 0. But the product (k−2)(k+4) has k in both factors and I don't know how to expand it properly.",
+    "input": "PROBLEM: Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.\n\nSTUDENT'S CURRENT WORKING:\nFor equal roots, the discriminant must be zero: b² − 4ac = 0. Here a = (k−2), b = 8, c = (k+4). So 64 − 4(k−2)(k+4) = 0. But the product (k−2)(k+4) has k in both factors and I don't know how to expand it properly."
+  },
+  {
+    "id": "trap_8_idk_phase2",
+    "base_problem_id": "trap_8",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.",
+    "student_working": "I tried expanding (k−2)(k+4) but got confused about the middle terms. I got k² + something − 8 but I'm not sure about the coefficient of k.",
+    "input": "PROBLEM: Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.\n\n[CONVERSATION HISTORY]\nSTUDENT: 64 − 4(k−2)(k+4) = 0. Don't know how to expand (k−2)(k+4).\nTUTOR: Use FOIL (First-Outer-Inner-Last): multiply each term in the first bracket by each term in the second. The key cross-terms are k×4 and (−2)×k.\n\nSTUDENT'S CURRENT WORKING:\nI tried expanding (k−2)(k+4) but got confused about the middle terms. I got k² + something − 8 but I'm not sure about the coefficient of k."
+  },
+  {
+    "id": "trap_8_wrong_pick_phase3",
+    "base_problem_id": "trap_8",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.",
+    "student_working": "I pick (d) because (k−2)(k+4) looks like a difference pattern, so the middle terms cancel.",
+    "input": "PROBLEM: Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.\n\n[CONVERSATION HISTORY]\nSTUDENT: 64 − 4(k−2)(k+4) = 0. Can't expand (k−2)(k+4).\nTUTOR: Use FOIL to expand, paying attention to the cross terms.\nSTUDENT: Got k² + something − 8, confused about Middle coefficient.\nTUTOR: What does (k−2)(k+4) expand to?\n(a) k² + 2k − 8 (First: k², Outer: 4k, Inner: −2k, Last: −8 → k² + 2k − 8)\n(b) k² − 2k − 8 (wrong sign on middle term)\n(c) k² + 2k + 8 (wrong sign on constant)\n(d) k² − 8 (middle terms cancel completely)\n\nSTUDENT'S CURRENT WORKING:\nI pick (d) because (k−2)(k+4) looks like a difference pattern, so the middle terms cancel."
+  },
+  {
+    "id": "trap_8_wrong_pick_phase4",
+    "base_problem_id": "trap_8",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.",
+    "student_working": "I tried (d) k²−8 and (b) k²−2k−8. I keep getting the signs wrong when expanding brackets.",
+    "input": "PROBLEM: Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.\n\n[CONVERSATION HISTORY]\nSTUDENT: Can't expand (k−2)(k+4).\nTUTOR: Use FOIL.\nSTUDENT: Confused about middle coefficient.\nTUTOR: Pick: (a) k²+2k−8 (b) k²−2k−8 (c) k²+2k+8 (d) k²−8\nSTUDENT: (d) because it's a difference pattern.\nTUTOR: Middle terms only cancel in (a−b)(a+b) = a²−b². Here the numbers differ: −2 and +4 (not −2 and +2). So 4k + (−2k) = 2k, not zero. Try again.\nSTUDENT: (b) k²−2k−8?\n\nSTUDENT'S CURRENT WORKING:\nI tried (d) k²−8 and (b) k²−2k−8. I keep getting the signs wrong when expanding brackets."
+  },
+  {
+    "id": "trap_9_idk_phase1",
+    "base_problem_id": "trap_9",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.",
+    "student_working": "By Pythagoras, c² = 25 + 144 = 169, so c = 13. I know the sine rule R = a/(2sinA) but I don't know angle A. I don't know another way to find R.",
+    "input": "PROBLEM: In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.\n\nSTUDENT'S CURRENT WORKING:\nBy Pythagoras, c² = 25 + 144 = 169, so c = 13. I know the sine rule R = a/(2sinA) but I don't know angle A. I don't know another way to find R."
+  },
+  {
+    "id": "trap_9_idk_phase2",
+    "base_problem_id": "trap_9",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.",
+    "student_working": "I vaguely remember the result about the hypotenuse and circumradius for a right triangle but I'm not sure if it's R = c/2 or R = c. Which one is it?",
+    "input": "PROBLEM: In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.\n\n[CONVERSATION HISTORY]\nSTUDENT: c = 13 by Pythagoras. I know R = a/(2sinA) but don't know angle A.\nTUTOR: For a right triangle, there's a shortcut: the hypotenuse is a diameter of the circumscribed circle. This comes from the fact that C = 90° means sinC = 1, so R = c/(2sinC) = c/2.\n\nSTUDENT'S CURRENT WORKING:\nI vaguely remember the result about the hypotenuse and circumradius for a right triangle but I'm not sure if it's R = c/2 or R = c. Which one is it?"
+  },
+  {
+    "id": "trap_9_wrong_pick_phase3",
+    "base_problem_id": "trap_9",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.",
+    "student_working": "I pick (b) because the hypotenuse is the radius of the circumscribed circle.",
+    "input": "PROBLEM: In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.\n\n[CONVERSATION HISTORY]\nSTUDENT: c = 13. R = a/(2sinA) but don't know angle A.\nTUTOR: For right triangles, hypotenuse = diameter of circumcircle, so R = c/2.\nSTUDENT: Is it R = c/2 or R = c?\nTUTOR: Which is the correct circumradius?\n(a) R = c/2 = 13/2 = 6.5 (hypotenuse = diameter, so radius = half)\n(b) R = c = 13 (hypotenuse = radius)\n(c) R = (a + b + c)/2 = 15 (semi-perimeter)\n(d) R = (a + b)/2 = 8.5 (average of the two legs)\n\nSTUDENT'S CURRENT WORKING:\nI pick (b) because the hypotenuse is the radius of the circumscribed circle."
+  },
+  {
+    "id": "trap_9_wrong_pick_phase4",
+    "base_problem_id": "trap_9",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.",
+    "student_working": "I tried (b) R=c=13 and (c) R=15. I'm confused about the difference between circumradius and semi-perimeter.",
+    "input": "PROBLEM: In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.\n\n[CONVERSATION HISTORY]\nSTUDENT: c = 13. Don't know how to find R without angles.\nTUTOR: Right triangle shortcut: hypotenuse = diameter, R = c/2.\nSTUDENT: Is R = c/2 or R = c?\nTUTOR: Pick: (a) R=c/2=6.5 (b) R=c=13 (c) R=(a+b+c)/2=15 (d) R=(a+b)/2=8.5\nSTUDENT: (b) hypotenuse = radius.\nTUTOR: The hypotenuse is the DIAMETER (full width across the circle), not the radius. Diameter = 2R, so R = c/2. If R = c, the circle would be twice as large. Try again.\nSTUDENT: (c) R = (a+b+c)/2 = 15?\n\nSTUDENT'S CURRENT WORKING:\nI tried (b) R=c=13 and (c) R=15. I'm confused about the difference between circumradius and semi-perimeter."
+  },
+  {
+    "id": "trap_10_idk_phase1",
+    "base_problem_id": "trap_10",
+    "student_state_type": "idk_phase1",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.",
+    "student_working": "I can see this looks like a quadratic, but in cosx instead of a regular variable. I'm not sure if I'm allowed to just substitute t = cosx and solve it like a normal quadratic equation.",
+    "input": "PROBLEM: Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.\n\nSTUDENT'S CURRENT WORKING:\nI can see this looks like a quadratic, but in cosx instead of a regular variable. I'm not sure if I'm allowed to just substitute t = cosx and solve it like a normal quadratic equation."
+  },
+  {
+    "id": "trap_10_idk_phase2",
+    "base_problem_id": "trap_10",
+    "student_state_type": "idk_phase2",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.",
+    "student_working": "I substituted t = cosx and solved 2t²−5t+2=0. I factored to (2t−1)(t−2)=0, getting t = 1/2 or t = 2. Since cosx can't be 2, only cosx = 1/2 is valid. But I don't know how to write the general solution for cosx = 1/2.",
+    "input": "PROBLEM: Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.\n\n[CONVERSATION HISTORY]\nSTUDENT: It looks quadratic in cosx. Can I substitute t = cosx?\nTUTOR: Yes! Substitute t = cosx to get 2t² − 5t + 2 = 0. Factor it, find the roots, then check which roots satisfy |t| ≤ 1 (since cosx is bounded between −1 and 1). Discard any invalid roots.\n\nSTUDENT'S CURRENT WORKING:\nI substituted t = cosx and solved 2t²−5t+2=0. I factored to (2t−1)(t−2)=0, getting t = 1/2 or t = 2. Since cosx can't be 2, only cosx = 1/2 is valid. But I don't know how to write the general solution for cosx = 1/2."
+  },
+  {
+    "id": "trap_10_wrong_pick_phase3",
+    "base_problem_id": "trap_10",
+    "student_state_type": "wrong_pick_phase3",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.",
+    "student_working": "I pick (b) because I remember the general solution formula nπ + (−1)ⁿα from class.",
+    "input": "PROBLEM: Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.\n\n[CONVERSATION HISTORY]\nSTUDENT: Looks quadratic in cosx. Can I substitute?\nTUTOR: Yes, substitute t=cosx, factor, check |t|≤1.\nSTUDENT: Got cosx = 1/2 (t=2 discarded). Don't know the general solution format.\nTUTOR: Which is the correct general solution for cosx = 1/2?\n(a) x = 2nπ ± π/3, n ∈ Z\n(b) x = nπ + (−1)ⁿ π/3, n ∈ Z\n(c) x = nπ ± π/3, n ∈ Z\n(d) x = π/3 only\n\nSTUDENT'S CURRENT WORKING:\nI pick (b) because I remember the general solution formula nπ + (−1)ⁿα from class."
+  },
+  {
+    "id": "trap_10_wrong_pick_phase4",
+    "base_problem_id": "trap_10",
+    "student_state_type": "wrong_pick_phase4",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.",
+    "student_working": "I tried (b) nπ+(−1)ⁿπ/3 and (c) nπ±π/3. I keep confusing the sine and cosine general solution formulas.",
+    "input": "PROBLEM: Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.\n\n[CONVERSATION HISTORY]\nSTUDENT: Got cosx = 1/2. Don't know general solution format.\nTUTOR: Pick: (a) 2nπ±π/3 (b) nπ+(−1)ⁿπ/3 (c) nπ±π/3 (d) π/3 only\nSTUDENT: (b) nπ+(−1)ⁿπ/3.\nTUTOR: That's the general solution for sinx = sinα, not cosx = cosα. The sine formula uses nπ+(−1)ⁿα because sine alternates sign. Cosine is symmetric about 0, so its formula uses ±. Try again.\nSTUDENT: (c) nπ±π/3?\n\nSTUDENT'S CURRENT WORKING:\nI tried (b) nπ+(−1)ⁿπ/3 and (c) nπ±π/3. I keep confusing the sine and cosine general solution formulas."
+  },
+  {
+    "id": "trap_1_post_limit_idk",
+    "base_problem_id": "trap_1",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?",
+    "student_working": "I already needed two reveals earlier. Now on a new step I'm stuck again. I don't know how to verify by listing a few valid arrangements.",
+    "input": "PROBLEM: How many words can be formed using all the letters of 'TUESDAY' such that the vowels always occupy even positions?\n\n[CONVERSATION HISTORY]\nSTUDENT: 3 vowels, 4 consonants, 3 even positions. Don't know how to count.\nTUTOR: Place vowels in even spots, consonants in odd spots: 3! × 4!.\n[STEP 2]\nSTUDENT: 3! × 4! = 144. Now the problem says 'words' — do I need to check divisibility or something else?\nTUTOR: No divisibility needed — 'words' just means arrangements. But verify: does 144 make sense?\nSTUDENT: I don't know how to verify.\nTUTOR: [REVEALED] Check: 3 vowels in 3 even spots = 3! = 6 ways. 4 consonants in 4 odd spots = 4! = 24 ways. Total = 6 × 24 = 144. ⚠️ Knowledge gap: multiplication principle for independent tasks.\n[STEP 3]\nSTUDENT: Now I need to also count words where exactly 2 vowels are in even positions. I think it's C(3,2) × something but I'm stuck.\nTUTOR: [REVEALED] Choose 2 of 3 even spots for vowels: C(3,2). The third vowel goes to one of 4 odd spots. Remaining 2 even spot gets a consonant. Then arrange: C(3,2)×3!×C(4,1)×3! But note — the original question asks ALL vowels in even positions, so this extension isn't needed. ⚠️ Knowledge gap: reading constraints carefully.\n[STEP 4 — NEW STEP]\nSTUDENT: Now the teacher gave a follow-up: what if repetition of letters is allowed? I don't know where to start.\n\nSTUDENT'S CURRENT WORKING:\nI already needed two reveals earlier. Now on a new step I'm stuck again. I don't know how to verify by listing a few valid arrangements."
+  },
+  {
+    "id": "trap_2_post_limit_idk",
+    "base_problem_id": "trap_2",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.",
+    "student_working": "I've used up both reveals. Now I found h=3, k=4 and need r². I substituted (4,1) into (4−3)²+(1−4)²=r² and got r²=10. Can I write the final equation? I don't know what form the answer should be in.",
+    "input": "PROBLEM: Find the equation of the circle passing through (4, 1) and (6, 5) whose centre lies on the line 4x + y = 16.\n\n[CONVERSATION HISTORY]\nSTUDENT: Three equations with h, k, r. Don't know how to solve.\nTUTOR: [REVEALED] Subtract point equations to eliminate r², get h+2k=11. With 4h+k=16, solve: h=3, k=4. ⚠️ Knowledge gap: elimination by subtraction.\nSTUDENT: Now I need r² but I forgot how to substitute back.\nTUTOR: [REVEALED] Substitute (4,1): (4−3)²+(1−4)²= 1+9 = 10. So r²=10. ⚠️ Knowledge gap: back-substitution.\n[NEW STEP]\nSTUDENT: I have centre (3,4), r²=10. I don't know what form the final equation should be in.\n\nSTUDENT'S CURRENT WORKING:\nI've used up both reveals. Now I found h=3, k=4 and need r². I substituted (4,1) into (4−3)²+(1−4)²=r² and got r²=10. Can I write the final equation? I don't know what form the answer should be in."
+  },
+  {
+    "id": "trap_3_post_limit_idk",
+    "base_problem_id": "trap_3",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.",
+    "student_working": "I used both reveals already. Now I computed LR = 2(25)/4 = 25/2. The teacher asks me to also find the eccentricity and I don't know the formula for that.",
+    "input": "PROBLEM: Find the length of the latus rectum of the hyperbola 25x² − 16y² = 400.\n\n[CONVERSATION HISTORY]\nSTUDENT: x²/16 − y²/25 = 1. Don't know latus rectum formula.\nTUTOR: [REVEALED] LR = 2b²/a. Here a²=16 (under x²), b²=25 (under y²). LR = 2(25)/4 = 25/2. ⚠️ Knowledge gap: latus rectum formula and identifying a², b² in hyperbola.\nSTUDENT: The teacher now asks for the eccentricity too. c²=a²+b²=16+25=41, c=√41. But is e = c/a or a/c?\nTUTOR: [REVEALED] For hyperbolas, e = c/a = √41/4. Unlike ellipses, e > 1 for hyperbolas. ⚠️ Knowledge gap: eccentricity formula.\n[NEW STEP]\nSTUDENT: Now find the equations of the directrices. I don't know the directrix formula.\n\nSTUDENT'S CURRENT WORKING:\nI used both reveals already. Now I computed LR = 2(25)/4 = 25/2. The teacher asks me to also find the eccentricity and I don't know the formula for that."
+  },
+  {
+    "id": "trap_4_post_limit_idk",
+    "base_problem_id": "trap_4",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.",
+    "student_working": "I've used my 2 reveals. Now I know the tangent is y = x + 3. The teacher asks: find the point of contact of this tangent with the parabola. I substitute y = x + 3 into y² = 12x but get confused solving the quadratic.",
+    "input": "PROBLEM: Find the equation of the tangent to the parabola y² = 12x which makes an angle of 45° with the x-axis.\n\n[CONVERSATION HISTORY]\nSTUDENT: m=1, a=3. Don't know tangent formula.\nTUTOR: [REVEALED] For y²=4ax, tangent is y = mx + a/m. So y = x + 3. ⚠️ Knowledge gap: slope-form tangent to parabola.\nSTUDENT: How do I find where this tangent touches the parabola?\nTUTOR: [REVEALED] Point of contact = (a/m², 2a/m) = (3, 6). Verify: 6² = 36 = 12(3) ✓. ⚠️ Knowledge gap: contact point formula.\n[NEW STEP]\nSTUDENT: Find the equation of the normal at this point of contact. I don't know the normal formula.\n\nSTUDENT'S CURRENT WORKING:\nI've used my 2 reveals. Now I know the tangent is y = x + 3. The teacher asks: find the point of contact of this tangent with the parabola. I substitute y = x + 3 into y² = 12x but get confused solving the quadratic."
+  },
+  {
+    "id": "trap_5_post_limit_idk",
+    "base_problem_id": "trap_5",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.",
+    "student_working": "Both my reveals are used up. I now have e = √5/3 and foci (±√5, 0). The follow-up asks: find the equations of the directrices. I have no idea what the directrix formula for an ellipse is.",
+    "input": "PROBLEM: Find the eccentricity and the coordinates of the foci of the ellipse 4x² + 9y² = 36.\n\n[CONVERSATION HISTORY]\nSTUDENT: a=3, b=2, c=√5. Is e = c/a or a/c?\nTUTOR: [REVEALED] e = c/a = √5/3 ≈ 0.745. Foci at (±√5, 0). ⚠️ Knowledge gap: eccentricity formula for ellipse.\nSTUDENT: Now find the length of the latus rectum. I don't know the formula.\nTUTOR: [REVEALED] LR = 2b²/a = 2(4)/3 = 8/3. ⚠️ Knowledge gap: latus rectum of ellipse.\n[NEW STEP]\nSTUDENT: Find the equations of the directrices. I don't know the formula.\n\nSTUDENT'S CURRENT WORKING:\nBoth my reveals are used up. I now have e = √5/3 and foci (±√5, 0). The follow-up asks: find the equations of the directrices. I have no idea what the directrix formula for an ellipse is."
+  },
+  {
+    "id": "trap_6_post_limit_idk",
+    "base_problem_id": "trap_6",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.",
+    "student_working": "I've exhausted both reveals. I now know the image is (−1, −4). The teacher asks me to verify this by showing that the midpoint of P(3,8) and P'(−1,−4) lies on the line x + 3y = 7. I computed midpoint = (1, 2) but I don't know how to check if (1,2) is on x + 3y = 7.",
+    "input": "PROBLEM: Find the image (reflection) of the point (3, 8) in the line x + 3y = 7.\n\n[CONVERSATION HISTORY]\nSTUDENT: Found perpendicular, found foot Q=(1,2). Don't know midpoint reversal.\nTUTOR: [REVEALED] P' = 2Q − P = (2−3, 4−8) = (−1, −4). ⚠️ Knowledge gap: midpoint formula reversal.\nSTUDENT: I want to check: is the line PP' perpendicular to x+3y=7? Slope PP' = (8−(−4))/(3−(−1)) = 12/4 = 3. Slope of line = −1/3. Product = 3×(−1/3) = −1 ✓. But my teacher wants another check.\nTUTOR: [REVEALED] Verify Q=(1,2) lies on x+3y=7: 1+6=7 ✓. Also verify Q is midpoint: ((3+(−1))/2, (8+(−4))/2) = (1,2) ✓. ⚠️ Knowledge gap: verification strategy.\n[NEW STEP]\nSTUDENT: Now find the image of (3,8) in the line y = x. I don't know how to do reflections in y = x.\n\nSTUDENT'S CURRENT WORKING:\nI've exhausted both reveals. I now know the image is (−1, −4). The teacher asks me to verify this by showing that the midpoint of P(3,8) and P'(−1,−4) lies on the line x + 3y = 7. I computed midpoint = (1, 2) but I don't know how to check if (1,2) is on x + 3y = 7."
+  },
+  {
+    "id": "trap_7_post_limit_idk",
+    "base_problem_id": "trap_7",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...",
+    "student_working": "I've used both my reveals. I now know S∞ = 9/4. The teacher gave a follow-up: find the sum to infinity of 1² + 2²/3 + 3²/9 + 4²/27 + ... (square of the numerator now). I have no idea how to handle this modified AGP.",
+    "input": "PROBLEM: Find the sum to infinity of the series 1 + 2/3 + 3/9 + 4/27 + ...\n\n[CONVERSATION HISTORY]\nSTUDENT: AGP with Tₙ = n/3^(n−1). Don't know how to sum.\nTUTOR: [REVEALED] S − S/3 gives GP: 1+1/3+1/9+... = 3/2. So (2/3)S = 3/2, S = 9/4. ⚠️ Knowledge gap: multiply-shift-subtract for AGP.\nSTUDENT: The GP sum step: 1+1/3+1/9+... I can't remember the GP formula.\nTUTOR: [REVEALED] GP sum to ∞ = a/(1−r) = 1/(1−1/3) = 3/2. ⚠️ Knowledge gap: infinite GP formula.\n[NEW STEP]\nSTUDENT: Now find Σ n²/3^(n−1) for n=1 to ∞. I don't know how to approach this.\n\nSTUDENT'S CURRENT WORKING:\nI've used both my reveals. I now know S∞ = 9/4. The teacher gave a follow-up: find the sum to infinity of 1² + 2²/3 + 3²/9 + 4²/27 + ... (square of the numerator now). I have no idea how to handle this modified AGP."
+  },
+  {
+    "id": "trap_8_post_limit_idk",
+    "base_problem_id": "trap_8",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.",
+    "student_working": "I've exhausted both reveals getting (k−2)(k+4) = k²+2k−8. Now 64−4(k²+2k−8) = 0 → 64−4k²−8k+32 = 0 → 4k²+8k−96 = 0 → k²+2k−24 = 0. I need to factor k²+2k−24 and I don't know how.",
+    "input": "PROBLEM: Find the values of k for which the quadratic (k−2)x² + 8x + (k+4) = 0 has real and equal roots.\n\n[CONVERSATION HISTORY]\nSTUDENT: Can't expand (k−2)(k+4).\nTUTOR: [REVEALED] (k−2)(k+4) = k²+2k−8. FOIL: k·k=k², k·4=4k, (−2)·k=−2k, (−2)·4=−8. Middle: 4k−2k=2k. ⚠️ Knowledge gap: FOIL expansion.\nSTUDENT: Now 64−4(k²+2k−8)=0. I expanded to 4k²+8k−96=0, then k²+2k−24=0. I tried to factor but I'm not sure about the signs.\nTUTOR: [REVEALED] k²+2k−24 = (k+6)(k−4) = 0, so k=−6 or k=4. Find two numbers with product −24 and sum +2: that's +6 and −4. ⚠️ Knowledge gap: factoring quadratics by sum-product.\n[NEW STEP]\nSTUDENT: The teacher asks: for k=4, find the repeated root. The equation becomes 2x²+8x+8=0. I don't know how to find the root.\n\nSTUDENT'S CURRENT WORKING:\nI've exhausted both reveals getting (k−2)(k+4) = k²+2k−8. Now 64−4(k²+2k−8) = 0 → 64−4k²−8k+32 = 0 → 4k²+8k−96 = 0 → k²+2k−24 = 0. I need to factor k²+2k−24 and I don't know how."
+  },
+  {
+    "id": "trap_9_post_limit_idk",
+    "base_problem_id": "trap_9",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.",
+    "student_working": "I've used both reveals. I have R = 13/2 = 6.5. The teacher now asks me to find the inradius r. I know there's a formula involving area and semi-perimeter but I don't remember it.",
+    "input": "PROBLEM: In triangle ABC, a = 5, b = 12, and C = 90°. Find the circumradius R.\n\n[CONVERSATION HISTORY]\nSTUDENT: c=13. R=a/(2sinA) but don't know angle A.\nTUTOR: [REVEALED] For right triangle, R = c/2 = 13/2 = 6.5. Hypotenuse = diameter. ⚠️ Knowledge gap: circumradius of right triangle.\nSTUDENT: Find angle A. sinA = a/c = 5/13. But I can't compute arcsin(5/13).\nTUTOR: [REVEALED] A = arcsin(5/13) ≈ 22.6°. Then B = 90° − A ≈ 67.4°. ⚠️ Knowledge gap: complementary angles in right triangles.\n[NEW STEP]\nSTUDENT: Now find the inradius r using r = Δ/s. I don't know how to compute the area Δ or the semi-perimeter s.\n\nSTUDENT'S CURRENT WORKING:\nI've used both reveals. I have R = 13/2 = 6.5. The teacher now asks me to find the inradius r. I know there's a formula involving area and semi-perimeter but I don't remember it."
+  },
+  {
+    "id": "trap_10_post_limit_idk",
+    "base_problem_id": "trap_10",
+    "student_state_type": "post_limit_idk",
+    "instruction": "You are a Socratic math tutor specializing in guided discovery learning.\n\nIDK ESCALATION PROTOCOL:\n• IDK #1 → Give a conceptual hint (name the concept/formula, don't compute)\n• IDK #2 → Offer 4 multiple-choice approaches and ask the student to pick one\n• Wrong pick #1 → Explain why that option fails, encourage picking again\n• Wrong pick #2 or IDK #3 → Reveal the step, flag the knowledge gap, continue the problem\n• Global limit: max 2 reveals per problem (≤5 steps) or 40% of steps (>5 steps). After limit, refuse reveals but keep giving hints/options.\n\nAlways end by asking for the student's working.",
+    "problem": "Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.",
+    "student_working": "Both reveals used. I now know x = 2nπ ± π/3. The teacher asks: find all solutions in [0, 2π]. I know 2nπ ± π/3 should give me specific values but I don't know how to list them.",
+    "input": "PROBLEM: Find the general solution of the equation 2cos²x − 5cosx + 2 = 0.\n\n[CONVERSATION HISTORY]\nSTUDENT: Got cosx = 1/2. Don't know general solution format.\nTUTOR: [REVEALED] General solution for cosθ = cosα is θ = 2nπ ± α. So x = 2nπ ± π/3. ⚠️ Knowledge gap: general solution for cosine equations.\nSTUDENT: I want to verify: is cos(π/3) actually 1/2? And why is t=2 rejected?\nTUTOR: [REVEALED] cos(π/3) = cos60° = 1/2 ✓. t=2 is rejected because −1 ≤ cosx ≤ 1 for all real x, so cosx=2 has no solution. ⚠️ Knowledge gap: range of trigonometric functions.\n[NEW STEP]\nSTUDENT: Find all solutions in [0, 2π]. I don't know how to extract specific values from the general solution.\n\nSTUDENT'S CURRENT WORKING:\nBoth reveals used. I now know x = 2nπ ± π/3. The teacher asks: find all solutions in [0, 2π]. I know 2nπ ± π/3 should give me specific values but I don't know how to list them."
+  }
+]

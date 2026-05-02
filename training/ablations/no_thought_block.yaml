@@ -1,0 +1,54 @@
+# Ablation: strip <thought> blocks from training data
+# Tests whether CoT reasoning in output improves pedagogical quality
+# IMPORTANT: run training/prep_no_thought.py first to create the stripped dataset
+
+base_model: Qwen/Qwen2.5-Math-7B-Instruct
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+
+datasets:
+  - path: training/ablation_data/train_no_thought.jsonl
+    type: alpaca
+    field_instruction: instruction
+    field_input: input
+    field_output: output
+
+dataset_prepared_path: training/.prepared_no_thought
+val_set_size: 0
+
+sequence_len: 2048
+sample_packing: false
+train_on_inputs: false
+
+adapter: qlora
+load_in_4bit: true
+bnb_4bit_compute_dtype: float16
+bnb_4bit_quant_type: nf4
+bnb_4bit_use_double_quant: true
+
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_linear: true
+
+output_dir: training/outputs/ablation_no_thought
+
+num_epochs: 3
+micro_batch_size: 2
+gradient_accumulation_steps: 8
+optimizer: paged_adamw_8bit
+lr_scheduler: cosine
+learning_rate: 2e-4
+warmup_ratio: 0.03
+max_grad_norm: 1.0
+
+gradient_checkpointing: true
+bf16: false
+fp16: true
+logging_steps: 10
+save_steps: 100
+save_total_limit: 2
+
+wandb_project: aolm-ft
+wandb_run_id: ablation-no-thought
+seed: 42
