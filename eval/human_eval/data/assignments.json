@@ -1,0 +1,242 @@
+{
+  "S01": [
+    "baseline_eval_dataset_150__69_partial_correct_B",
+    "baseline_eval_trap_prompt__trap_5_post_limit_idk_A",
+    "baseline_eval_dataset_150__62_almost_done_A",
+    "baseline_eval_dataset_150__62_cold_start_B",
+    "baseline_rag_eval_dataset_150__70_arithmetic_error_A",
+    "baseline_rag_eval_dataset_150__68_almost_done_B"
+  ],
+  "S02": [
+    "baseline_eval_trap_prompt__trap_7_idk_phase2_A",
+    "baseline_eval_dataset_150__62_cold_start_A",
+    "baseline_eval_dataset_150__62_arithmetic_error_A",
+    "baseline_eval_dataset_150__63_almost_done_A",
+    "baseline_eval_dataset_150__80_cold_start_A",
+    "baseline_eval_dataset_150__75_arithmetic_error_A"
+  ],
+  "S03": [
+    "baseline_rag_eval_dataset_150__68_almost_done_A",
+    "baseline_eval_dataset_150__63_almost_done_B",
+    "baseline_eval_dataset_150__76_partial_correct_A",
+    "baseline_rag_eval_dataset_150__79_partial_correct_A",
+    "baseline_eval_dataset_150__85_almost_done_B",
+    "baseline_rag_eval_trap_prompt__trap_3_post_limit_idk_B"
+  ],
+  "S04": [
+    "baseline_eval_dataset_150__66_almost_done_A",
+    "baseline_rag_eval_dataset_150__66_wrong_confident_B",
+    "baseline_eval_dataset_150__75_partial_correct_B",
+    "baseline_rag_eval_trap_prompt__trap_1_post_limit_idk_B",
+    "baseline_eval_dataset_150__63_almost_done_A",
+    "baseline_eval_dataset_150__62_arithmetic_error_A"
+  ],
+  "S05": [
+    "baseline_rag_eval_dataset_150__70_arithmetic_error_A",
+    "baseline_rag_eval_dataset_150__64_arithmetic_error_A",
+    "baseline_eval_dataset_150__75_partial_correct_A",
+    "baseline_eval_dataset_150__67_partial_correct_B",
+    "baseline_rag_eval_dataset_150__90_wrong_confident_B",
+    "baseline_eval_dataset_150__75_arithmetic_error_A"
+  ],
+  "S06": [
+    "baseline_eval_dataset_150__74_arithmetic_error_B",
+    "baseline_rag_eval_dataset_150__79_wrong_confident_B",
+    "baseline_eval_dataset_150__67_wrong_confident_A",
+    "baseline_eval_trap_prompt__trap_5_post_limit_idk_B",
+    "baseline_eval_dataset_150__85_almost_done_B",
+    "baseline_rag_eval_dataset_150__83_cold_start_B"
+  ],
+  "S07": [
+    "baseline_eval_dataset_150__69_partial_correct_B",
+    "baseline_eval_dataset_150__62_cold_start_A",
+    "baseline_rag_eval_dataset_150__75_wrong_confident_B",
+    "baseline_rag_eval_dataset_150__75_cold_start_B",
+    "baseline_eval_dataset_150__62_almost_done_B",
+    "baseline_eval_dataset_150__63_almost_done_B"
+  ],
+  "S08": [
+    "baseline_eval_dataset_150__69_partial_correct_A",
+    "baseline_eval_dataset_150__62_almost_done_B",
+    "baseline_rag_eval_dataset_150__75_cold_start_A",
+    "baseline_eval_dataset_150__62_cold_start_A",
+    "baseline_rag_eval_dataset_150__64_arithmetic_error_B",
+    "baseline_eval_dataset_150__74_arithmetic_error_A"
+  ],
+  "S09": [
+    "baseline_eval_dataset_150__68_cold_start_B",
+    "baseline_eval_dataset_150__69_partial_correct_A",
+    "baseline_eval_trap_prompt__trap_5_post_limit_idk_B",
+    "baseline_rag_eval_trap_prompt__trap_3_post_limit_idk_B",
+    "baseline_rag_eval_dataset_150__75_wrong_confident_B",
+    "baseline_eval_dataset_150__85_almost_done_A"
+  ],
+  "S10": [
+    "baseline_eval_dataset_150__69_partial_correct_B",
+    "baseline_rag_eval_dataset_150__79_partial_correct_B",
+    "baseline_eval_dataset_150__75_arithmetic_error_A",
+    "baseline_rag_eval_dataset_150__68_almost_done_B",
+    "baseline_eval_dataset_150__75_partial_correct_B",
+    "baseline_eval_dataset_150__63_almost_done_A"
+  ],
+  "S11": [
+    "baseline_eval_dataset_150__80_cold_start_A",
+    "baseline_rag_eval_dataset_150__70_arithmetic_error_A",
+    "baseline_rag_eval_trap_prompt__trap_1_post_limit_idk_B",
+    "baseline_eval_trap_prompt__trap_5_post_limit_idk_A",
+    "baseline_eval_dataset_150__62_almost_done_A",
+    "baseline_rag_eval_dataset_150__68_almost_done_A"
+  ],
+  "S12": [
+    "baseline_rag_eval_trap_prompt__trap_3_wrong_pick_phase4_A",
+    "baseline_rag_eval_dataset_150__68_almost_done_A",
+    "baseline_rag_eval_dataset_150__66_wrong_confident_A",
+    "baseline_eval_dataset_150__75_partial_correct_A",
+    "baseline_rag_eval_dataset_150__83_cold_start_A",
+    "baseline_rag_eval_dataset_150__79_wrong_confident_A"
+  ],
+  "S13": [
+    "baseline_rag_eval_dataset_150__66_wrong_confident_B",
+    "baseline_eval_dataset_150__67_wrong_confident_B",
+    "baseline_rag_eval_trap_prompt__trap_3_post_limit_idk_B",
+    "baseline_eval_dataset_150__68_cold_start_B",
+    "baseline_eval_dataset_150__75_arithmetic_error_B",
+    "baseline_eval_dataset_150__74_arithmetic_error_B"
+  ],
+  "S14": [
+    "baseline_eval_dataset_150__74_arithmetic_error_B",
+    "baseline_rag_eval_dataset_150__83_cold_start_A",
+    "baseline_eval_dataset_150__68_cold_start_B",
+    "baseline_rag_eval_dataset_150__90_wrong_confident_B",
+    "baseline_rag_eval_dataset_150__75_wrong_confident_B",
+    "baseline_rag_eval_trap_prompt__trap_3_wrong_pick_phase4_B"
+  ],
+  "S15": [
+    "baseline_rag_eval_dataset_150__83_cold_start_A",
+    "baseline_eval_dataset_150__75_partial_correct_A",
+    "baseline_eval_dataset_150__67_wrong_confident_A",
+    "baseline_eval_dataset_150__80_cold_start_A",
+    "baseline_rag_eval_dataset_150__66_wrong_confident_B",
+    "baseline_eval_dataset_150__76_partial_correct_B"
+  ],
+  "S16": [
+    "baseline_rag_eval_dataset_150__79_partial_correct_B",
+    "baseline_eval_dataset_150__67_wrong_confident_B",
+    "baseline_rag_eval_trap_prompt__trap_1_post_limit_idk_B",
+    "baseline_rag_eval_trap_prompt__trap_3_wrong_pick_phase4_B",
+    "baseline_rag_eval_trap_prompt__trap_3_post_limit_idk_A",
+    "baseline_eval_dataset_150__63_almost_done_B"
+  ],
+  "S17": [
+    "baseline_eval_trap_prompt__trap_7_idk_phase2_B",
+    "baseline_rag_eval_dataset_150__75_cold_start_A",
+    "baseline_eval_dataset_150__62_cold_start_B",
+    "baseline_eval_dataset_150__62_arithmetic_error_A",
+    "baseline_rag_eval_trap_prompt__trap_3_post_limit_idk_A",
+    "baseline_eval_dataset_150__76_partial_correct_A"
+  ],
+  "S18": [
+    "baseline_rag_eval_dataset_150__66_wrong_confident_A",
+    "baseline_rag_eval_dataset_150__68_almost_done_B",
+    "baseline_eval_dataset_150__75_partial_correct_B",
+    "baseline_rag_eval_dataset_150__90_wrong_confident_B",
+    "baseline_eval_trap_prompt__trap_5_post_limit_idk_B",
+    "baseline_eval_dataset_150__76_partial_correct_A"
+  ],
+  "S19": [
+    "baseline_rag_eval_dataset_150__90_wrong_confident_A",
+    "baseline_rag_eval_dataset_150__75_cold_start_A",
+    "baseline_rag_eval_dataset_150__79_partial_correct_A",
+    "baseline_rag_eval_trap_prompt__trap_3_wrong_pick_phase4_A",
+    "baseline_eval_dataset_150__67_wrong_confident_B",
+    "baseline_eval_dataset_150__67_partial_correct_A"
+  ],
+  "S20": [
+    "baseline_rag_eval_dataset_150__64_arithmetic_error_A",
+    "baseline_rag_eval_trap_prompt__trap_3_wrong_pick_phase4_A",
+    "baseline_eval_dataset_150__80_cold_start_B",
+    "baseline_eval_dataset_150__67_partial_correct_A",
+    "baseline_eval_dataset_150__62_almost_done_B",
+    "baseline_rag_eval_dataset_150__70_arithmetic_error_B"
+  ],
+  "S21": [
+    "baseline_rag_eval_dataset_150__70_arithmetic_error_B",
+    "baseline_rag_eval_dataset_150__75_wrong_confident_A",
+    "baseline_eval_dataset_150__85_almost_done_A",
+    "baseline_rag_eval_trap_prompt__trap_1_post_limit_idk_A",
+    "baseline_rag_eval_trap_prompt__trap_3_post_limit_idk_A",
+    "baseline_eval_dataset_150__62_cold_start_B"
+  ],
+  "S22": [
+    "baseline_eval_dataset_150__76_partial_correct_B",
+    "baseline_eval_dataset_150__66_almost_done_A",
+    "baseline_eval_dataset_150__75_arithmetic_error_B",
+    "baseline_rag_eval_dataset_150__83_cold_start_B",
+    "baseline_eval_trap_prompt__trap_5_post_limit_idk_A",
+    "baseline_eval_dataset_150__62_almost_done_A"
+  ],
+  "S23": [
+    "baseline_eval_dataset_150__66_almost_done_A",
+    "baseline_eval_dataset_150__68_cold_start_A",
+    "baseline_rag_eval_dataset_150__66_wrong_confident_A",
+    "baseline_eval_dataset_150__85_almost_done_B",
+    "baseline_rag_eval_dataset_150__75_wrong_confident_A",
+    "baseline_rag_eval_dataset_150__79_partial_correct_A"
+  ],
+  "S24": [
+    "baseline_rag_eval_dataset_150__64_arithmetic_error_B",
+    "baseline_rag_eval_dataset_150__75_wrong_confident_A",
+    "baseline_eval_dataset_150__67_partial_correct_B",
+    "baseline_eval_dataset_150__66_almost_done_B",
+    "baseline_eval_dataset_150__85_almost_done_A",
+    "baseline_rag_eval_dataset_150__79_wrong_confident_A"
+  ],
+  "S25": [
+    "baseline_rag_eval_dataset_150__79_wrong_confident_B",
+    "baseline_eval_dataset_150__67_partial_correct_A",
+    "baseline_eval_dataset_150__67_wrong_confident_A",
+    "baseline_eval_trap_prompt__trap_7_idk_phase2_B",
+    "baseline_rag_eval_dataset_150__64_arithmetic_error_B",
+    "baseline_eval_dataset_150__66_almost_done_B"
+  ],
+  "S26": [
+    "baseline_rag_eval_trap_prompt__trap_3_wrong_pick_phase4_B",
+    "baseline_eval_trap_prompt__trap_7_idk_phase2_A",
+    "baseline_eval_dataset_150__67_partial_correct_B",
+    "baseline_rag_eval_dataset_150__83_cold_start_B",
+    "baseline_rag_eval_dataset_150__70_arithmetic_error_B",
+    "baseline_eval_dataset_150__80_cold_start_B"
+  ],
+  "S27": [
+    "baseline_rag_eval_dataset_150__79_partial_correct_B",
+    "baseline_eval_dataset_150__75_arithmetic_error_B",
+    "baseline_eval_dataset_150__74_arithmetic_error_A",
+    "baseline_rag_eval_trap_prompt__trap_1_post_limit_idk_A",
+    "baseline_eval_trap_prompt__trap_7_idk_phase2_B",
+    "baseline_eval_dataset_150__68_cold_start_A"
+  ],
+  "S28": [
+    "baseline_eval_dataset_150__62_arithmetic_error_B",
+    "baseline_eval_dataset_150__74_arithmetic_error_A",
+    "baseline_rag_eval_dataset_150__64_arithmetic_error_A",
+    "baseline_eval_dataset_150__80_cold_start_B",
+    "baseline_eval_dataset_150__68_cold_start_A",
+    "baseline_rag_eval_dataset_150__79_wrong_confident_B"
+  ],
+  "S29": [
+    "baseline_rag_eval_dataset_150__79_wrong_confident_A",
+    "baseline_eval_dataset_150__62_arithmetic_error_B",
+    "baseline_eval_dataset_150__66_almost_done_B",
+    "baseline_eval_dataset_150__76_partial_correct_B",
+    "baseline_rag_eval_dataset_150__75_cold_start_B",
+    "baseline_rag_eval_dataset_150__90_wrong_confident_A"
+  ],
+  "S30": [
+    "baseline_eval_dataset_150__69_partial_correct_A",
+    "baseline_eval_trap_prompt__trap_7_idk_phase2_A",
+    "baseline_rag_eval_trap_prompt__trap_1_post_limit_idk_A",
+    "baseline_rag_eval_dataset_150__75_cold_start_B",
+    "baseline_eval_dataset_150__62_arithmetic_error_B",
+    "baseline_rag_eval_dataset_150__90_wrong_confident_A"
+  ]
+}

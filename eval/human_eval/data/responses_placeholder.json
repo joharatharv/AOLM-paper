@@ -1,0 +1,162 @@
+[
+  {
+    "response_id": "item_001_A",
+    "item_id": "item_001",
+    "student_state_type": "cold_start",
+    "problem": "Two finite sets have m and n elements. The number of subsets of the first set is 112 more than that of the second set. Find the values of m and n.",
+    "student_working": "I think the number of subsets is 2^n, but I'm stuck.",
+    "model_response": "You're right that the number of subsets of a set with k elements is 2^k — great start!\n\nSo if the first set has m elements and the second has n elements, can you write an equation using this fact and the condition that one set has 112 more subsets than the other?\n\nGive it a try and show me what you get."
+  },
+  {
+    "response_id": "item_001_B",
+    "item_id": "item_001",
+    "student_state_type": "cold_start",
+    "problem": "Two finite sets have m and n elements. The number of subsets of the first set is 112 more than that of the second set. Find the values of m and n.",
+    "student_working": "I think the number of subsets is 2^n, but I'm stuck.",
+    "model_response": "The number of subsets of a set with k elements is 2^k. So you need to solve 2^m - 2^n = 112. Try factoring the left side — what can you take out as a common factor?"
+  },
+  {
+    "response_id": "item_002_A",
+    "item_id": "item_002",
+    "student_state_type": "partial_correct",
+    "problem": "Find the sum of all integers from 1 to 100.",
+    "student_working": "I know the formula is n(n+1)/2. I get 100 × 101 / 2 = 5050.",
+    "model_response": "You've applied the formula correctly and reached the right answer — well done!\n\nBefore we close this one: can you explain *why* the formula n(n+1)/2 works? What's the reasoning behind it?\n\nUnderstanding the why will help you in cases where you can't remember the formula."
+  },
+  {
+    "response_id": "item_002_B",
+    "item_id": "item_002",
+    "student_state_type": "partial_correct",
+    "problem": "Find the sum of all integers from 1 to 100.",
+    "student_working": "I know the formula is n(n+1)/2. I get 100 × 101 / 2 = 5050.",
+    "model_response": "Correct! The answer is 5050. The formula n(n+1)/2 works because you pair up numbers: 1+100, 2+99, etc., each pair summing to 101, and there are 50 pairs."
+  },
+  {
+    "response_id": "item_003_A",
+    "item_id": "item_003",
+    "student_state_type": "wrong_confident",
+    "problem": "Solve for x: 2x + 3 = 11",
+    "student_working": "2x + 3 = 11, so 2x = 14, so x = 7. Done!",
+    "model_response": "Hmm, let's double-check your work. If x = 7, what do you get when you substitute back into the original equation?\n\nTry it: what is 2(7) + 3?"
+  },
+  {
+    "response_id": "item_003_B",
+    "item_id": "item_003",
+    "student_state_type": "wrong_confident",
+    "problem": "Solve for x: 2x + 3 = 11",
+    "student_working": "2x + 3 = 11, so 2x = 14, so x = 7. Done!",
+    "model_response": "Your answer is incorrect. When you subtract 3 from 11 you get 8, not 14. So 2x = 8, which means x = 4. Always check your subtraction step carefully."
+  },
+  {
+    "response_id": "item_004_A",
+    "item_id": "item_004",
+    "student_state_type": "almost_done",
+    "problem": "Differentiate f(x) = x³ + 2x² - 5x + 1",
+    "student_working": "f'(x) = 3x² + 4x - 5. Is that right?",
+    "model_response": "You're really close — let me ask you one thing before confirming.\n\nGo back to the original term +1 at the end. What's the derivative of a constant?\n\nOnce you answer that, check whether your answer needs any adjustment."
+  },
+  {
+    "response_id": "item_004_B",
+    "item_id": "item_004",
+    "student_state_type": "almost_done",
+    "problem": "Differentiate f(x) = x³ + 2x² - 5x + 1",
+    "student_working": "f'(x) = 3x² + 4x - 5. Is that right?",
+    "model_response": "Yes, that's correct! The derivative of a constant (the +1) is 0, so it disappears, and all your other terms are right. Great work."
+  },
+  {
+    "response_id": "item_005_A",
+    "item_id": "item_005",
+    "student_state_type": "arithmetic_error",
+    "problem": "A train travels 240 km at 60 km/h. How long does the journey take?",
+    "student_working": "Time = Distance / Speed = 240 / 60 = 3 hours.",
+    "model_response": "Your method is exactly right — Time = Distance ÷ Speed is the correct formula, and you set it up perfectly.\n\nLet me ask you to redo just the division: what is 240 ÷ 60?\n\nTake your time with that one calculation."
+  },
+  {
+    "response_id": "item_005_B",
+    "item_id": "item_005",
+    "student_state_type": "arithmetic_error",
+    "problem": "A train travels 240 km at 60 km/h. How long does the journey take?",
+    "student_working": "Time = Distance / Speed = 240 / 60 = 3 hours.",
+    "model_response": "Hmm, actually 240 ÷ 60 = 4, not 3. So the journey takes 4 hours. You had the right formula though, just a small arithmetic slip."
+  },
+  {
+    "response_id": "item_006_A",
+    "item_id": "item_006",
+    "student_state_type": "cold_start",
+    "problem": "Prove that √2 is irrational.",
+    "student_working": "I don't know where to start.",
+    "model_response": "A classic proof technique for showing something *can't* be rational is proof by contradiction: assume it *is* rational and then show that leads to an impossibility.\n\nSo: if √2 were rational, how would you write it? What's the definition of a rational number?\n\nStart there and show me."
+  },
+  {
+    "response_id": "item_006_B",
+    "item_id": "item_006",
+    "student_state_type": "cold_start",
+    "problem": "Prove that √2 is irrational.",
+    "student_working": "I don't know where to start.",
+    "model_response": "For this proof, assume √2 = p/q where p and q are integers with no common factors. Then square both sides to get 2 = p²/q², so p² = 2q². This means p² is even, so p is even. Write p = 2k and substitute to find q is also even — contradicting that p/q was in lowest terms."
+  },
+  {
+    "response_id": "item_007_A",
+    "item_id": "item_007",
+    "student_state_type": "partial_correct",
+    "problem": "Expand and simplify (x + 3)(x - 2).",
+    "student_working": "I used FOIL: x² - 2x + 3x - 6 = x² + x - 6.",
+    "model_response": "Nicely done — your FOIL expansion and simplification are both correct.\n\nHere's a follow-up to deepen your understanding: can you factor x² + x - 6 back into two brackets without looking at your working above?\n\nThis is good practice for working in reverse."
+  },
+  {
+    "response_id": "item_007_B",
+    "item_id": "item_007",
+    "student_state_type": "partial_correct",
+    "problem": "Expand and simplify (x + 3)(x - 2).",
+    "student_working": "I used FOIL: x² - 2x + 3x - 6 = x² + x - 6.",
+    "model_response": "Correct, the answer is x² + x - 6. You applied FOIL correctly."
+  },
+  {
+    "response_id": "item_008_A",
+    "item_id": "item_008",
+    "student_state_type": "wrong_confident",
+    "problem": "What is the probability of rolling a 6 on a fair die twice in a row?",
+    "student_working": "Probability of 6 is 1/6, so twice in a row is 2/6 = 1/3.",
+    "model_response": "I can see the logic you used — but let me ask you to think about this differently.\n\nWhen two events are *independent* (the second roll doesn't depend on the first), how do you combine their probabilities? Is it addition or multiplication?\n\nOnce you answer that, try reworking the calculation."
+  },
+  {
+    "response_id": "item_008_B",
+    "item_id": "item_008",
+    "student_state_type": "wrong_confident",
+    "problem": "What is the probability of rolling a 6 on a fair die twice in a row?",
+    "student_working": "Probability of 6 is 1/6, so twice in a row is 2/6 = 1/3.",
+    "model_response": "That's wrong. For independent events you multiply probabilities, not add them. So it's 1/6 × 1/6 = 1/36."
+  },
+  {
+    "response_id": "item_009_A",
+    "item_id": "item_009",
+    "student_state_type": "almost_done",
+    "problem": "Solve the quadratic: x² - 5x + 6 = 0",
+    "student_working": "I factored it as (x - 2)(x - 3) = 0, so x = 2 or x = 3.",
+    "model_response": "That's perfect. Before you move on — can you verify your answers by substituting each one back into the original equation?\n\nThis habit will save you in exams when you're unsure."
+  },
+  {
+    "response_id": "item_009_B",
+    "item_id": "item_009",
+    "student_state_type": "almost_done",
+    "problem": "Solve the quadratic: x² - 5x + 6 = 0",
+    "student_working": "I factored it as (x - 2)(x - 3) = 0, so x = 2 or x = 3.",
+    "model_response": "Correct! x = 2 and x = 3 are both solutions. You factored correctly."
+  },
+  {
+    "response_id": "item_010_A",
+    "item_id": "item_010",
+    "student_state_type": "arithmetic_error",
+    "problem": "Find the area of a triangle with base 8 cm and height 5 cm.",
+    "student_working": "Area = (1/2) × base × height = (1/2) × 8 × 5 = 25 cm².",
+    "model_response": "Your formula and setup are both correct — Area = ½ × base × height is exactly right.\n\nJust redo the final multiplication: what is ½ × 8 × 5?\n\nWork through it step by step."
+  },
+  {
+    "response_id": "item_010_B",
+    "item_id": "item_010",
+    "student_state_type": "arithmetic_error",
+    "problem": "Find the area of a triangle with base 8 cm and height 5 cm.",
+    "student_working": "Area = (1/2) × base × height = (1/2) × 8 × 5 = 25 cm².",
+    "model_response": "Almost! ½ × 8 = 4, and 4 × 5 = 20, so the area is 20 cm², not 25. Your formula was right though."
+  }
+]

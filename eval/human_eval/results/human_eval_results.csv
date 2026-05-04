@@ -1,0 +1,16 @@
+timestamp,student_id,response_id,item_id,student_state_type,H1_answer_leakage,H2_socratic_quality,H3_hint_calibration,H4_engagement,H5_learning_outcome
+2026-05-02T15:21:48.223196,S01,baseline_eval_dataset_150__69_partial_correct_B,baseline_eval_dataset_150__69_partial_correct,partial_correct,1,2,5,0,Yes
+2026-05-03T02:48:42.431072,S01,baseline_eval_trap_prompt__trap_5_post_limit_idk_A,baseline_eval_trap_prompt__trap_5_post_limit_idk,post_limit_idk,1,3,5,1,Yes
+2026-05-03T02:49:32.842881,S01,baseline_eval_dataset_150__62_almost_done_A,baseline_eval_dataset_150__62_almost_done,almost_done,0,4,5,1,Yes
+2026-05-03T02:50:03.394315,S01,baseline_eval_dataset_150__62_cold_start_B,baseline_eval_dataset_150__62_cold_start,cold_start,0,5,3,1,No
+2026-05-03T02:50:53.548861,S01,baseline_rag_eval_dataset_150__70_arithmetic_error_A,baseline_rag_eval_dataset_150__70_arithmetic_error,arithmetic_error,1,3,5,1,Yes
+2026-05-03T02:51:35.443408,S01,baseline_rag_eval_dataset_150__68_almost_done_B,baseline_rag_eval_dataset_150__68_almost_done,almost_done,1,1,5,0,Yes
+2026-05-03T03:08:29.508084,S01,baseline_eval_dataset_150__69_partial_correct_B,baseline_eval_dataset_150__69_partial_correct,partial_correct,1,1,5,0,Yes
+2026-05-03T03:10:46.404736,S01,baseline_eval_trap_prompt__trap_5_post_limit_idk_A,baseline_eval_trap_prompt__trap_5_post_limit_idk,post_limit_idk,1,4,5,1,Yes
+2026-05-03T03:11:12.826433,S01,baseline_eval_dataset_150__62_almost_done_A,baseline_eval_dataset_150__62_almost_done,almost_done,1,1,5,0,Yes
+2026-05-03T03:11:36.561767,S01,baseline_eval_dataset_150__62_cold_start_B,baseline_eval_dataset_150__62_cold_start,cold_start,0,5,3,1,No
+2026-05-03T03:11:56.443049,S01,baseline_rag_eval_dataset_150__70_arithmetic_error_A,baseline_rag_eval_dataset_150__70_arithmetic_error,arithmetic_error,1,4,5,1,Yes
+2026-05-03T03:12:19.796205,S01,baseline_rag_eval_dataset_150__68_almost_done_B,baseline_rag_eval_dataset_150__68_almost_done,almost_done,1,1,5,0,Yes
+2026-05-03T03:14:53.777651,S01,baseline_eval_dataset_150__69_partial_correct_B,baseline_eval_dataset_150__69_partial_correct,partial_correct,1,1,5,0,Yes
+2026-05-03T03:17:47.142924,S01,baseline_eval_dataset_150__69_partial_correct_B,baseline_eval_dataset_150__69_partial_correct,partial_correct,1,1,3,0,Yes
+2026-05-03T03:19:06.107744,S01,baseline_eval_dataset_150__69_partial_correct_B,baseline_eval_dataset_150__69_partial_correct,partial_correct,1,1,5,0,Yes

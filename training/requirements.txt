@@ -1,0 +1,33 @@
+# ══════════════════════════════════════════════════════
+# CurioChain — Supervised Fine-Tuning + RAG Dependencies
+# CUDA driver on cluster: 12080 (max CUDA 12.8)
+# Install torch/torchvision SEPARATELY first (see below)
+# ══════════════════════════════════════════════════════
+
+# ── PyTorch (CUDA 12.4 wheel, compatible with driver 12.8) ──
+# Run BEFORE pip install -r requirements.txt:
+#   pip install "torch==2.10.0" "torchvision==0.25.0" \
+#     --index-url https://download.pytorch.org/whl/cu124 --force-reinstall
+
+# ── Unsloth stack ──
+# unsloth-zoo==2026.4.4 requires torch<2.11.0,>=2.4.0 → torch==2.10.0 satisfies this
+unsloth[cu124-torch210]
+unsloth-zoo==2026.4.4
+
+# ── HuggingFace ecosystem ──
+transformers>=4.40.0
+peft>=0.10.0
+trl>=0.8.6
+bitsandbytes>=0.43.0
+accelerate>=0.29.0
+datasets>=2.19.0
+huggingface_hub>=1.0.0
+
+# ── RAG system (rag/rag_system.py, rag/inference.py) ──
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# ── Utilities ──
+numpy>=2.0.0
+pillow>=10.0.0
+fsspec<=2025.9.0
